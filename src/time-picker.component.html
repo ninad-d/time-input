@@ -1,0 +1,53 @@
+<div class="content-spacing">
+    <strong>Time</strong>
+</div>
+<div>
+    <span 
+        class="hour ignore-click" 
+        ng-click="$ctrl.isActive = 'hour'"
+        ng-class="{'active': $ctrl.isActive === 'hour'}"
+    >
+        {{$ctrl.hour}}
+    </span>
+    <span>:</span>
+    <span 
+        class="minute ignore-click" 
+        ng-click="$ctrl.isActive = 'minute'"
+        ng-class="{'active': $ctrl.isActive === 'minute'}"
+    >
+        {{$ctrl.minute}}
+    </span>
+    <span 
+        class="meridian ignore-click" 
+        ng-click="$ctrl.isActive = 'ampm'"
+        ng-class="{'active': $ctrl.isActive === 'ampm'}"
+    >
+        {{$ctrl.ampm}}
+    </span>
+    <span>
+        <md-button 
+            class="md-icon-btn reset-time" 
+            ng-if="$ctrl.showReset === true" 
+            ng-click="$ctrl.resetTime()"
+        >
+            X
+        </md-button>
+    </span>
+    <div class="button-container">
+        <div 
+            ng-click="$ctrl.updateTime('increase')" 
+            class="arrow-up ignore-click"
+        ></div>
+        <div 
+            ng-click="$ctrl.updateTime('decrease')" 
+            class="arrow-down ignore-click"
+        ></div>
+    </div>
+    <div 
+        class="error" 
+        ng-if="$ctrl.showTimeError === true"
+    >
+        Please select a time.
+    </div>
+
+</div>
